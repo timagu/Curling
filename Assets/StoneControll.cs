@@ -24,6 +24,8 @@ public class StoneControll : MonoBehaviour {
         if (Input.GetMouseButton(0))
         {
             //投げる強さを選択する。
+                //強さメーター表示
+                //ボタンを離したら、強さが決まる。
         }
 	}
 
@@ -32,7 +34,7 @@ public class StoneControll : MonoBehaviour {
         //マウスのボタンを離した時
         if (Input.GetMouseButtonUp(0))
         {
-            //-Y座標方向へ飛ぶ。
+            //-Z座標方向へ飛ぶ。
             GetMouseButtonUp();
         }
     }
@@ -41,7 +43,7 @@ public class StoneControll : MonoBehaviour {
     {
         Vector3 objectPointInScreen = Camera.main.WorldToScreenPoint(this.transform.position);
 
-        Vector3 mousePointInScreen = new Vector3(Input.mousePosition.x, Input.mousePosition.y);
+        Vector3 mousePointInScreen = new Vector3(Input.mousePosition.x, 0,Input.mousePosition.z);
 
         Vector3 mousePointInWorld = Camera.main.ScreenToWorldPoint(mousePointInScreen);
         this.transform.position = mousePointInWorld;
@@ -54,7 +56,7 @@ public class StoneControll : MonoBehaviour {
     //マウスのボタンを離した時の処理
     void GetMouseButtonUp()
     {
-        //-Y座標方向へ飛ぶ。         //力
+        //-Z座標方向へ飛ばす。         //力
         rigid.AddForce(Vector3.down * 500);
     }
 }
