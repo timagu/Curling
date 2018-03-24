@@ -18,7 +18,9 @@ public class StoneControll : MonoBehaviour {
 		if (Input.GetMouseButtonDown(0))
         {
             //ストーンを掴む。
-            OnMouseDrag();
+            //OnMouseDrag();
+
+
         }
         //マウスのボタンをドラッグした時
         if (Input.GetMouseButton(0))
@@ -39,7 +41,7 @@ public class StoneControll : MonoBehaviour {
         }
     }
     //マウスのボタンをドラッグした時の処理
-    private void OnMouseDrag()
+    /*private void OnMouseDrag()
     {
         Vector3 objectPointInScreen = Camera.main.WorldToScreenPoint(this.transform.position);
 
@@ -47,7 +49,7 @@ public class StoneControll : MonoBehaviour {
 
         Vector3 mousePointInWorld = Camera.main.ScreenToWorldPoint(mousePointInScreen);
         this.transform.position = mousePointInWorld;
-    }
+    }*/
     //マウスのボタンをドラッグした時の処理
     void GetMouseButton()
     {
