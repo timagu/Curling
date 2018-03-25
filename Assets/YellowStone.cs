@@ -11,25 +11,25 @@ public class YellowStone : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-        if (Input.GetMouseButtonDown(2) || Input.GetKey(KeyCode.RightArrow))
+        //(0)左ボタン(1)右ボタン(2)中ボタン
+        if (Input.GetMouseButtonDown(1) || Input.GetKey(KeyCode.RightArrow))
         {
-            transform.position += new Vector3(0.1f, 0f, 0f);
+            GetComponent<Rigidbody>().AddForce(100, 0, 0);
         }
 
         if (Input.GetMouseButtonDown(0) || Input.GetKey(KeyCode.LeftArrow))
         {
-            transform.position += new Vector3(-0.1f, 0f, 0f);
+            GetComponent<Rigidbody>().AddForce(-100,0,0);
         }
 
-        if (Input.GetMouseButtonDown(1) || Input.GetKey(KeyCode.DownArrow))
+        if (Input.GetMouseButtonDown(2) || Input.GetKey(KeyCode.DownArrow))
         {
-            transform.position += new Vector3(0f, 0f, -0.1f);
+            GetComponent<Rigidbody>().AddForce(0,0,-100);
         }
 
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            transform.position += new Vector3(0f, 0f, 0.1f);
+            GetComponent<Rigidbody>().AddForce(0, 0, 100);
         }
     }
 }
